@@ -75,7 +75,7 @@
         $('#linkList').empty();
 
         for(i = 0; i < hyperLinks.length; i++) {
-          $('#linkList').html("<li>" + hyperLinks[i].name + "<a href=\'" + hyperLinks[i].url + "\'" + "</a></li>");
+          $('#linkList').append("<li><a href=" + "'" + hyperLinks[i].url + "' target=" + "_blank" + ">" + hyperLinks[i].name + "</a></li>");
         }
 
         
