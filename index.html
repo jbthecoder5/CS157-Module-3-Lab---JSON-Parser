@@ -50,8 +50,8 @@
 
         <ul id="linkList" class="list-group">
           <!-- Sample Begin -->
-          <li class="list-group-item"><a href="https://www.google.com" target="_blank">Google</a></li>
-          <li class="list-group-item"><a href="https://www.amazon.com" target="_blank">Amazon</a></li>
+           <!--<li class="list-group-item"><a href="https://www.google.com" target="_blank">Google</a></li>-->
+           <!--<li class="list-group-item"><a href="https://www.amazon.com" target="_blank">Amazon</a></li>-->
           <!-- Sample End -->
         </ul>
         <small style="color: red">Remove the sample output above in the HTML before you implement the parser. The sample is just to show you the output of the parser based on the JSON data above.</small>
@@ -68,7 +68,18 @@
       //    b. Make sure to add a target="_blank" attribute to the link so they open up in a new tab
       //    c. Append the newly created <li> to the unordered list <ul> (id: linkList)
 
+      $('#parseJsonBtn').click(function(){
+        var jsonString = $('#jsonText').val();
+        var hyperLinks = JSON.parse(jsonString);
 
+        $('#linkList').empty();
+
+        for(i = 0; i < hyperLinks.length; i++) {
+          $('#linkList').html("<li>" + hyperLinks[i].name + "<a href=\'" + hyperLinks[i].url + "\'" + "</a></li>");
+        }
+
+        
+      });
       
 
 
